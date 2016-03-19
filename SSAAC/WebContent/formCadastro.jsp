@@ -7,7 +7,7 @@
 <title>SSAAC</title>
 </head>
 <body>
-<h2>SAAC - Cadastramento de Autor</h2>
+<h2>SSAAC - Cadastramento de Autor</h2>
 <%
 	String msg = request.getParameter("msg");
 	if (msg!=null && !msg.isEmpty()) {
@@ -17,9 +17,9 @@
 
 <h3>Preencha as informações solicitadas:</h3>
 <form action="/SSAAC/addStudentAuthor" method="post">
-Nome: <input type="text" name="name"/><p/>
-E-mail: <input type="text" name="email"><p/>
-Tipo: 	<select name="tipo" id="tipo" onchange="change()">
+<p>Nome: <input type="text" name="name"/><p/>
+<p>E-mail: <input type="text" name="email"><p/>
+<p>Tipo: 	<select name="tipo" id="tipo" onchange="change()">
 			<option>Aluno</option>
 			<option selected="selected">Docente</option>
 		</select><p/>

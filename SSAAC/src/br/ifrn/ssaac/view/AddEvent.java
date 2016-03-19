@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import br.ifrn.ssaac.business.facade.SSAAC;
 import br.ifrn.ssaac.business.factory.SSAACFactory;
-import br.ifrn.ssaac.business.model.Student;
+import br.ifrn.ssaac.business.model.Event;
 
-@WebServlet("/addStudentAuthor")
-public class AddStudentAuthor extends HttpServlet {
+@WebServlet("/addEvent")
+public class AddEvent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public AddStudentAuthor() {
+    
+    public AddEvent() {
         super();
     }
 
@@ -24,19 +24,22 @@ public class AddStudentAuthor extends HttpServlet {
 		
 		// Recuperando parâmetros do formulário
 		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String course = request.getParameter("course");
+		String dateBegin = request.getParameter("datebegin");
+		String dateEnd = request.getParameter("dateend");
+		
 		// Testa se os parâmetros são válidos
-		if (name != null && !name.isEmpty() && 
-				email != null && !email.isEmpty() &&
-				course != null && !course.isEmpty()) {
-			// Cria o objeto aluno-autor a ser inserido
-			Student student = new Student(name, email, course);
-			// Solicita a fachada que insira o dado aluno-autor
-			facade.addStudentAuthor(student);
-			response.sendRedirect("/SSAAC/success.jsp?msg=Aluno%20inserido");
+		if (name != null && !name.isEmpty() && dateBegin != null && 
+				!dateBegin.isEmpty() && dateEnd != null && !dateEnd.isEmpty()) {
+			
+			// Cria o objeto evento a ser inserido
+			Event event = new Event(name, dateBegin, dateEnd);
+			
+			// Solicita a fachada que insira o evento
+			facade.addEvent(event);
+			response.sendRedirect("/SSAAC/success.jsp?msg=Evento%20criado");
 		} else {
 			response.sendRedirect("/SSAAC/formCadastro.jsp?msg=Parâmetros%20inválidos");
 		}
 	}
+
 }

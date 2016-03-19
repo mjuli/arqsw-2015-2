@@ -15,6 +15,7 @@
 <h3>Menu de opções:</h3>
 ...
 <hr/>
-<a href="/SSAAC/formCadastro.jsp">Efetue o seu cadastro como autor aqui!</a>
+<a href="/SSAAC/formCadastro.jsp">Efetue o seu cadastro como autor aqui!</a><br>
+<a href="/SSAAC/formEvento.jsp">Crie seu evento!</a>
 </body>
 </html>

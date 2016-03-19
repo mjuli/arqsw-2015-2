@@ -4,6 +4,8 @@ import br.ifrn.ssaac.business.facade.SSAAC;
 import br.ifrn.ssaac.business.facade.SSAACImp;
 import br.ifrn.ssaac.business.userbi.UserBI;
 import br.ifrn.ssaac.business.userbi.UserBIImp;
+import br.ifrn.ssaac.business.eventbi.EventBI;
+import br.ifrn.ssaac.business.eventbi.EventBIImp;
 
 public class SSAACFactory {
 	private static SSAAC facade = null;
@@ -30,5 +32,9 @@ public class SSAACFactory {
 	
 	public UserBI getUserIB() {
 		return new UserBIImp();
+	}
+	
+	public EventBI getEventBI() {
+		return new EventBIImp();
 	}
 }
